@@ -1,0 +1,35 @@
+{
+  "name": "left_hand_tool",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "copy html resource",
+  "permissions": ["*://*/*/", "tabs", "scripting"],
+  "icons": {
+    "16": "16.png",
+    "32": "32.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "left_hand_tool",
+    "default_icon": {
+      "16": "16.png",
+      "32": "32.png",
+      "48": "48.png",
+      "128": "128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.figma.com/file/*"],
+      "js": ["content_script_figma.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["web_accessible_resource_figma.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}
